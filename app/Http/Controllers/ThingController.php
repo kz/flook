@@ -125,19 +125,18 @@ class ThingController extends Controller
         ]);
 
         // Register data with the viewing services
-
+        $urn = base64_encode($bucket[0]['urn']);
         $response = $client->post('https://developer.api.autodesk.com/viewingservice/v1/register', [
             'json' => [
-                'urn' => base64_encode($bucket[0]['urn']),
+                'urn' => $urn,
             ],
             'headers' => [
                 'Authorization' => 'Bearer ' . $authToken,
             ]
         ]);
 
-        $urn = base64_encode($bucket[0]['urn']);
 
-
-        return response()->view('thing.show', compact('name', 'description', 'urn', 'authToken'));
+        return response()->view('thing.show', compact('name', 'description', 'urn',
+                'authToken') + ['pollUrl' => 'https://developer.api.autodesk.com/viewingservice/v1/' . $urn]);
     }
 }

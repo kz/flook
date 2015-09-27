@@ -4,26 +4,44 @@
     <link rel="stylesheet" href="https://developer.api.autodesk.com/viewingservice/v1/viewers/style.css"
           type="text/css">
     <script src="https://developer.api.autodesk.com/viewingservice/v1/viewers/viewer3D.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 </head>
-<body>
+<body onload="initialize()">
 
 <div id="viewer" style="position:absolute; width:90%; height:60%;"></div>
 <script>
     function initialize() {
-        var options = {
-            'document': 'urn:{{ $urn }}',
-            'env': 'AutodeskProduction',
-            'getAccessToken': getToken,
-            'refreshToken': getToken,
-        };
+        var timer = setInterval(function () {
+            $.ajax({
+                url: "{{ $pollUrl }}",
+                type: "GET",
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader('Authorization', 'Bearer {{ $authToken }}');
+                },
+                success: function (data) {
+                    console.log(data);
 
-        var viewerElement = document.getElementById('viewer');
-        var viewer = new Autodesk.Viewing.Viewer3D(viewerElement, {});
+                    if (data.status == 'success') {
+                        clearInterval(timer);
+                        var options = {
+                            'document': 'urn:{{ $urn }}',
+                            'env': 'AutodeskProduction',
+                            'getAccessToken': getToken,
+                            'refreshToken': getToken,
+                        };
+                        var viewerElement = document.getElementById('viewer');
+                        var viewer = new Autodesk.Viewing.Viewer3D(viewerElement, {});
 
-        Autodesk.Viewing.Initializer(options, function () {
-            viewer.initialize();
-            loadDocument(viewer, options.document);
-        });
+                        Autodesk.Viewing.Initializer(options, function () {
+                            viewer.initialize();
+                            loadDocument(viewer, options.document);
+                        });
+                    }
+                },
+                dataType: "json",
+                timeout: 2000
+            })
+        }, 1000);
     }
 
     // WARNING: UNSAFE CODE IN PRODUCTION
