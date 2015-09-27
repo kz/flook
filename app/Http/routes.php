@@ -16,3 +16,4 @@ Route::get('/', function () {
 });
 
 Route::get('search', 'SearchController@search');
+Route::get('item/{link}', 'ThingController@show');
