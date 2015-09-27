@@ -16,4 +16,4 @@ Route::get('/', function () {
 });
 
 Route::get('search', 'SearchController@search');
-Route::get('item/{link}', 'ThingController@show');
+Route::get('thing/{link}', 'ThingController@show');
