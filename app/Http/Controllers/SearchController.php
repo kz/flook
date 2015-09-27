@@ -30,6 +30,9 @@ class SearchController extends Controller
             $links = $xs->findAll('//*[@id="js-results"]/div[1]/a')->map(function ($node) {
                 return $node->find('@href')->extract();
             });
+            $names = $xs->findAll('//*[@id="js-results"]/div[1]/a/div[*]')->map(function ($node) {
+                return $node->find('h1')->extract();
+            });
             $images = $xs->findAll('//*[@id="js-results"]/div[1]/a/div[*]/div[2]')->map(function ($node) {
                 $styleTag = $node->find('@style')->extract();
                 preg_match('/\'(.*?)\'/', $styleTag, $styleMatches);
@@ -39,6 +42,6 @@ class SearchController extends Controller
             return response()->view('results.none');
         }
 
-        return response()->view('results.show', compact('links', 'images'));
+        return response()->view('results.show', compact('links', 'images', 'names'));
     }
 }

@@ -23,7 +23,7 @@
                     <a href="{{ $link }}">
                         <img src="{{ $images[$key] }}" alt="...">
                         <div class="caption">
-                            <h3>{{ $link }}</h3>
+                            <h3>{{ $names[$key] }}</h3>
                         </div>
                     </a>
                 </div>
