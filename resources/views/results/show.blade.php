@@ -5,10 +5,10 @@
     <nav class="navbar navbar-default">
         <div class="row">
             <div class="nav-brand">
-                <img src="images/logo.png">
+                <a href="/"><img src="/images/logo.png"></a>
             </div>
             <div class="form-group col-md-12 ">
-                <form action="search" method="POST">
+                <form action="/search" method="POST">
                     <input type="text" name="query" class="form-control input-normal"
                            placeholder="Search for 3D models"/>
                     <input type="hidden" name="_token" value="{{ csrf_token() }}"/>

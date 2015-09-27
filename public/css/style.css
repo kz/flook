@@ -7,6 +7,23 @@ body {
   display: inline-block;
 }
 
+.btn .btn-primary {
+    position: relative;
+    float: right;
+    margin-right: 50px;
+}
+
+.row .container {
+    width: 500px;
+    margin-left: 50px;
+    padding-left: 20px;
+}
+
+.vertical-center {
+    display: flex;
+    align-items: center;
+}
+
 .logo {
 	width: 100px;
 }

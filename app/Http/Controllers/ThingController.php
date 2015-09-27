@@ -137,6 +137,9 @@ class ThingController extends Controller
 
 
         return response()->view('thing.show', compact('name', 'description', 'urn',
-                'authToken') + ['pollUrl' => 'https://developer.api.autodesk.com/viewingservice/v1/' . $urn]);
+                'authToken') + [
+                'pollUrl' => 'https://developer.api.autodesk.com/viewingservice/v1/' . $urn,
+                'dl' => $downloadLinks[0]
+            ]);
     }
 }

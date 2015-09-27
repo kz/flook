@@ -5,7 +5,7 @@
         <div class="jumbotron vertical-center">
             <div class="container">
                 <div class=" container col-md-10">
-                    <a href="#">
+                    <a href="/">
                         <img src="/images/logo.png">
                     </a>
                     <div class="row">
