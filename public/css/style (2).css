@@ -1,0 +1,97 @@
+body { 
+  background: url("../images/background.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  display: inline-block;
+}
+
+.form-group{
+  margin-left: 20px;
+}
+
+.logo {
+  width: 100px;
+}
+
+.nav-brand img {
+  height: 75px;
+  width: 250px;
+}
+
+.navbar {
+   background-color: transparent;
+   background: rgba(0,0,0,0.5);
+   border-color: transparent;
+   display: inline;
+}
+
+.jumbotron {
+  margin-top:250px;
+  padding-right: 120px;
+  padding-left: 120px;
+  width: 1024px;
+  background-color: rgba(0,0,0,0) !important;
+  border-radius: 5px;
+  margin-left: 500px;
+  color:black;
+}
+
+table {
+  width: 100%;
+}
+
+a .image-responsive {
+  height: 302px !important;
+  width: 338px !important;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+table, td{
+  border: 1px solid black
+}
+
+.mod-grid {
+  display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-lines: multiple;
+    -moz-box-lines: multiple;
+    box-lines: multiple;
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    box-pack: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    -o-justify-content: center;
+    justify-content: center;
+    -ms-flex-pack: center;
+    margin: 0 -10px;
+    position:absolute;
+}
+
+.main-grid {
+  margin-left: 122.5px;
+  margin-right: 122.5px;
+  margin-top: 200px;
+}
+
+.image-description {
+    position: absolute;
+    left: 15px;
+    bottom: 0px;
+    width: 308px;
+    background-color: rgba(255,255,255,0.5);
+    padding-left: 25px;
+}

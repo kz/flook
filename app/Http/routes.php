@@ -15,5 +15,5 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('search', 'SearchController@search');
+Route::post('search', 'SearchController@search');
 Route::get('thing/{link}', 'ThingController@show');

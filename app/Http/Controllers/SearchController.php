@@ -35,7 +35,6 @@ class SearchController extends Controller
                 preg_match('/\'(.*?)\'/', $styleTag, $styleMatches);
                 return $styleMatches[1];
             });
-            dd($images);
         } catch(NodeNotFoundException $e) {
             return response()->view('results.none');
         }
