@@ -18,7 +18,7 @@ To install this on your own machine:
 
 - [Kelvin Zhang](https://github.com/kz)
 - [Jack Barber](https://github.com/jbarber69)
-- [Sasha Vorontsov](https://github.com/darkonious)
+- [Aleksandr Vorontsov](https://github.com/darkonious)
 - [Freddie Rawlins](https://github.com/FreddieRa)
 - [All Contributors](link-contributors)
 
