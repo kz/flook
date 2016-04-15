@@ -1,5 +1,7 @@
 # Flook
 
+*Disclaimer: This repository contains code developed during a hackathon and does not represent the quality of code produced in a professional environment.*
+
 Flook is a project built during [HackGenY London 2015](http://hackgeny.com/london/) which won the third place prize and the Best 3D Project prize. Built using PHP/Laravel, it is a search engine for 3D models which works by scraping [Youmagine](https://www.youmagine.com/)'s search results. It then retrieves the 3D models and displays them interactively using the [Autodesk View and Data API](https://developer.autodesk.com/).
 
 ## Installation
